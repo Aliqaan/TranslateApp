@@ -4,10 +4,11 @@ ENV CI=true
 
 WORKDIR /translator
 
-COPY ./package.json /translator/package.json
+COPY package.json .
 RUN npm install
 
-COPY ./src /translator/src
-COPY ./public /translator/public
-RUN npm run test
+COPY . .
+
+EXPOSE 3000
+
 CMD ["npm", "start"]

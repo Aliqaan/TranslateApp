@@ -1,10 +1,12 @@
 version: '3'
 services:
   app:
-    container_name: tollenar
-    image: huebsch
+    container_name: translator
+    image: translator
     build:
       context: .
+    volumes:
+      - ./src:/translator/src
     ports:
       - "3000:3000"
     stdin_open: true
